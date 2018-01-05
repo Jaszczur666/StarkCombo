@@ -1,0 +1,21 @@
+version: 1.0.{build}
+
+init:
+
+- cmd: call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86
+
+build_script:
+
+- cmd: cl main.cpp /EHsc /FeStarkCombo.exe
+
+artifacts:
+
+- path: StarkCombo.exe
+
+deploy:
+
+- provider: GitHub
+
+  auth_token:
+
+    secure: NlvQFdeK2gBL/UW7NU5B+1HTSjyOyketlMwEJXmrHsOhjDPM6eJ3hoyjFgIxUh84
